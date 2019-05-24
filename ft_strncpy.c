@@ -6,24 +6,24 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:25:27 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/21 15:18:40 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/05/24 15:41:53 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	int i;
 
 	i = 0;
-	while ((len > 0) && (src[i]))
+	while ((sizeof(src[i]) <= len) && (src[i]))
 	{
 		dst[i] = src[i];
 		i++;
-		len--;
+		len = len - sizeof(src[i]);
 	}
-	while (len > 0)
+	while ((int)len > 0)
 	{
 		dst[i] = '\0';
 		len--;
