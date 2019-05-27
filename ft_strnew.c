@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:03:13 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 12:47:15 by ahartley         ###   ########.fr       */
+/*   Created: 2019/05/27 09:31:58 by ahartley          #+#    #+#             */
+/*   Updated: 2019/05/27 10:15:57 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strnew(size_t size)
 {
-	write(1, &c, 1);
+	int		i;
+	char	*ans;
+
+	i = 0;
+	ans = (char *)malloc(size);
+	while (size > 0)
+	{
+		ans[i] = '\0';
+		i++;
+		size--;
+	}
+	return (ans);
 }

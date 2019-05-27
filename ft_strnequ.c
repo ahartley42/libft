@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:03:13 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 12:47:15 by ahartley         ###   ########.fr       */
+/*   Created: 2019/05/27 08:38:50 by ahartley          #+#    #+#             */
+/*   Updated: 2019/05/27 09:04:27 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	write(1, &c, 1);
+	int i;
+
+	i = 0;
+	while ((s1[i]) && (n > 1))
+	{
+		if (s1[i] == s2[i])
+		{
+			i++;
+			n--;
+		}
+		else
+			break ;
+	}
+	if (s1[i] == s2[i] || n == 0)
+		return (1);
+	else
+		return (0);
 }
