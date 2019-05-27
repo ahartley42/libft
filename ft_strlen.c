@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 10:32:11 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/21 10:42:32 by ahartley         ###   ########.fr       */
+/*   Created: 2019/05/24 15:04:37 by ahartley          #+#    #+#             */
+/*   Updated: 2019/05/27 12:27:06 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
