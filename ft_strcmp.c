@@ -6,22 +6,26 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:44:24 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/21 12:21:54 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/05/28 11:56:52 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
+	int				i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
 	i = 0;
-	while ((s1[i] == s2[i]) && (s1[i]) && (s2[i]))
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	while ((p1[i] == p2[i]) && (p1[i]) && (p2[i]))
 		i++;
-	if (s2[i] < s1[i])
+	if (p1[i] > p2[i])
 		return (1);
-	if (s2[i] > s1[i])
+	if (p1[i] < p2[i])
 		return (-1);
 	return (0);
 }
