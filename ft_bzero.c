@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 13:51:10 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/28 09:30:28 by ahartley         ###   ########.fr       */
+/*   Created: 2019/05/28 08:25:26 by ahartley          #+#    #+#             */
+/*   Updated: 2019/05/28 08:54:43 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	int			i;
-	const char	*go;
-	char		*end;
-
-	i = 0;
-	go = (const char *)src;
-	end = (char *)dst;
-	while (n > i * sizeof(char))
-	{
-		end[i] = go[i];
-		i++;
-	}
-	return ((void *)end);
+	s = ft_memset(s, 0, n);
 }
