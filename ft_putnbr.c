@@ -6,10 +6,24 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:05:17 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/23 14:36:39 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/05/30 14:37:14 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_putnbr(int n)
 {
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+	}
+	if (n <= 9)
+		ft_putchar(n + '0');
+	else
+	{
+		ft_putnbr(n / 10);
+		ft_putchar('0' + (n % 10));
+	}
 }

@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 09:31:58 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/30 13:21:44 by ahartley         ###   ########.fr       */
+/*   Created: 2019/05/31 09:21:49 by ahartley          #+#    #+#             */
+/*   Updated: 2019/05/31 09:30:05 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*ans;
-
-	i = 0;
-	ans = (char *)malloc(size + 1);
-	ft_bzero(ans, size + 1);
-	return (ans);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n <= 9)
+		ft_putchar_fd(n + '0', fd);
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd('0' + (n % 10), fd);
+	}
 }

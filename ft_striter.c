@@ -6,29 +6,20 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 14:39:14 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/23 14:54:59 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/05/29 09:21:21 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void	f(char c)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	c = c + 13;
-}
+	int	i;
 
-void	ft_striter(char *s, void(*f)(char *))
-{
-	while (s)
+	i = 0;
+	while (s[i])
 	{
-		s = f(s);
-		s++;
+		f(&s[i]);
+		i++;
 	}
-}
-
-int main()
-{
-	char test[] = "abcdefghijklm";
-	printf("%s\n", test);
-	printf("%s", ft_striter(test, f(test)));
 }
