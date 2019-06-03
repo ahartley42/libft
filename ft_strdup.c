@@ -6,21 +6,11 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 08:01:01 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 12:27:16 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/03 14:32:52 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i * sizeof(char));
-}
 
 char	*ft_strdup(const char *s1)
 {
