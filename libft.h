@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 08:12:01 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/29 16:22:41 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/03 10:27:56 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct		s_list
 {
 	void			*content;
-	size_t			*content_size;
+	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
 
