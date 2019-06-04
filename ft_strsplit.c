@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:52:47 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/04 13:00:52 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/04 15:42:05 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,9 @@ char		**ft_strsplit(char const *s, char c)
 		k = 0;
 		while (s[i] == c)
 			i++;
-		while (s[i] && s[i] != c)
-		{
-			i++;
+		while (s[i + k] && s[i + k] != c)
 			k++;
-		}
+		i = i + k;
 		ans[j] = (char *)malloc(sizeof(char) * k + 1);
 		ft_strncpy(ans[j], &s[i - k], k);
 		j++;
