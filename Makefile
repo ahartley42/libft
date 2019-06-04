@@ -6,7 +6,7 @@
 #    By: ahartley <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/24 08:30:33 by ahartley          #+#    #+#              #
-#    Updated: 2019/05/31 09:27:59 by ahartley         ###   ########.fr        #
+#    Updated: 2019/06/04 13:50:16 by ahartley         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,27 +70,12 @@ SRC = ft_memset.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c
 
-TEST = ft_is*.c \
-	   ft_strlen.c \
-	   ft_strncat.c \
-	   ft_putchar.c \
-	   ft_putstr.c \
-	   ft_putchar_fd.c \
-	   ft_putstr_fd.c \
-	   ft_memset.c \
-	   ft_memcpy.c \
-	   ft_memalloc.c \
-	   ft_bzero.c \
-	   ft_itoa.c \
-	   ft_strncpy.c \
-	   ft_putchar_fd.c
-
 OBJ = $(SRC:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Werror -Wextra $(TEST)
+	gcc -c -Wall -Werror -Wextra $(SRC)
 	ar rc $(NAME) *.o
 
 clean:
