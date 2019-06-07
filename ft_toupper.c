@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:11:03 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 12:37:37 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/07 17:02:00 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int	ft_toupper(int c)
 {
-	if ((c >= 'a') && (c <= 'z'))
+	if (c >= 'a' && c <= 'z')
 		c = c - 32;
 	return (c);
 }
+
+/*
+** lowercase ascii has a larger value than uppercase ascii
+** 32 is the difference
+*/

@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:08:57 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 12:27:42 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/07 15:02:10 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,7 @@ char	*ft_strcpy(char *dst, const char *src)
 	dst[i] = '\0';
 	return (dst);
 }
+
+/*
+** copies src into dst, char by char, including the '\0'
+*/

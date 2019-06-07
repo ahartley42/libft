@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 08:59:01 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/30 13:00:05 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/07 17:13:46 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	j = 0;
 	while (dst[i] && i < (int)dstsize)
 		i++;
-	while (src[j] && ((i + j + 1) < (int)dstsize))
+	while (src[j] && i + j < (int)dstsize - 1)
 	{
 		dst[i + j] = src[j];
 		j++;
@@ -30,3 +30,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[i + j] = '\0';
 	return (i + ft_strlen(src));
 }
+
+/*
+** i = dst index
+** j = src index
+** i + j = dst index after dst iteration
+** return value is what was TRIED to be appended
+** what is ACTUALLY appended is done but NOT returned
+*/

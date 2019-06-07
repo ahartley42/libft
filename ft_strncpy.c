@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:25:27 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/28 15:31:46 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/07 15:08:39 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	int i;
 
 	i = 0;
-	while ((len > 0) && (src[i]))
+	while (len > 0 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
@@ -31,3 +31,8 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	}
 	return (dst);
 }
+
+/*
+** while loop #1 copies src to dst
+** while loop #2 adds '\0' only if loop #1 broke because src reached null
+*/

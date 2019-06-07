@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 13:13:21 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/28 14:21:26 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/07 15:28:22 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,9 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+/*
+** returns matching c pointer
+** no match returns NULL
+** starts iterating from end of string
+*/
