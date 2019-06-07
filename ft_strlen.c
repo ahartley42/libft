@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 15:04:37 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 12:27:06 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/07 10:52:01 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,9 @@ size_t	ft_strlen(const char *s)
 	i = 0;
 	while (s[i])
 		i++;
-	return (i * sizeof(char));
+	return (i);
 }
+
+/*
+** iterates through string counting each character
+*/
