@@ -6,7 +6,7 @@
 #    By: ahartley <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/24 08:30:33 by ahartley          #+#    #+#              #
-#    Updated: 2019/06/04 13:50:16 by ahartley         ###   ########.fr        #
+#    Updated: 2019/06/08 14:07:46 by ahartley         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC = ft_memset.c \
 	  ft_strstr.c \
 	  ft_strnstr.c \
 	  ft_strcmp.c \
+	  ft_strncmp.c \
 	  ft_atoi.c \
 	  ft_isalpha.c \
 	  ft_isdigit.c \
@@ -76,10 +77,10 @@ all: $(NAME)
 
 $(NAME):
 	gcc -c -Wall -Werror -Wextra $(SRC)
-	ar rc $(NAME) *.o
+	ar rc $(NAME) $(OBJ)
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)
