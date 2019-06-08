@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 08:31:37 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 08:38:40 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/08 11:53:43 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,12 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	int i;
-
-	i = 0;
-	while (s1[i])
-	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			break ;
-	}
-	if (s1[i] == s2[i])
+	if (ft_strcmp(s1, s2) == 0)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
+
+/*
+** compares 2 strings
+** 1 = exact match, 0 = difference
+*/

@@ -6,20 +6,20 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:06:09 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/03 12:17:18 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/08 17:32:42 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_make_positive(int n)
+static unsigned int	make_positive(int n)
 {
 	if (n < 0)
 		n = n * -1;
 	return (n);
 }
 
-static int			ft_itoa_counter(int n, int i)
+static int			itoa_counter(int n, int i)
 {
 	while (n != 0)
 	{
@@ -39,15 +39,16 @@ char				*ft_itoa(int n)
 	z = n;
 	if (n <= 0)
 		i++;
-	z = ft_make_positive(n);
-	i = ft_itoa_counter(z, i);
-	ans = (char *)malloc(i * sizeof(char) + 1);
+	z = make_positive(n);
+	i = itoa_counter(z, i);
+	if (!(ans = (char *)malloc(i + 1)))
+		return (NULL);
 	ans[i] = '\0';
 	while (z != 0)
 	{
 		if (z % 10 >= 0 && z % 10 <= 9)
 			ans[i - 1] = (z % 10) + '0';
-		z = (z - (z % 10)) / 10;
+		z = z / 10;
 		i--;
 	}
 	if (i == 1)
@@ -56,3 +57,9 @@ char				*ft_itoa(int n)
 		ans[0] = '0';
 	return (ans);
 }
+
+/*
+** i = string size to accomodate numbers and sign
+** z = positive value for n, done to retain integrity of n
+** itoa conversion happens from the string end to start
+*/

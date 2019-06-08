@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 08:10:03 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 12:45:59 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/08 10:57:53 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_strclr(char *s)
 {
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		s[i] = '\0';
-		i++;
-	}
+	ft_bzero(s, ft_strlen(s) + 1);
 }
+
+/*
+** sets every char in string to 0 or NULL
+*/

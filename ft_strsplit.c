@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:52:47 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/04 15:42:05 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/08 16:46:56 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ char		**ft_strsplit(char const *s, char c)
 	int		j;
 	int		k;
 
-	ans = (char **)malloc(sizeof(*ans) * ft_wordcount(s, c) + 1);
+	if (!(ans = (char **)malloc(sizeof(*ans) * ft_wordcount(s, c) + 1)))
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (j < ft_wordcount(s, c))
@@ -49,10 +50,20 @@ char		**ft_strsplit(char const *s, char c)
 		while (s[i + k] && s[i + k] != c)
 			k++;
 		i = i + k;
-		ans[j] = (char *)malloc(sizeof(char) * k + 1);
+		if (!(ans[j] = (char *)malloc(k + 1)))
+			return (NULL);
 		ft_strncpy(ans[j], &s[i - k], k);
 		j++;
 	}
 	ans[j] = 0;
 	return (ans);
 }
+
+/*
+** i = s index
+** j = 1st index of ans
+** k = word length after split
+** i = i + k is necessary for i to jump to the next split or null
+** strncpy used to copy the entire string of 'k' length to ans[j]
+** j increments to iterate through the entire 2D array
+*/

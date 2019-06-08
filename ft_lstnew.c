@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 13:03:05 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/03 10:30:04 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/08 18:13:22 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	list->next = NULL;
 	return (list);
 }
+
+/*
+** creates a perfect copy of the passed t_list, except where...
+** ...content is NULL
+*/

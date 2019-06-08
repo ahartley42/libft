@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 09:23:48 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/29 09:31:02 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/08 11:06:36 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
+
+/*
+** similar to ft_striter, but function changes with each index
+*/
