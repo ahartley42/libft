@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 12:44:57 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/07 10:11:13 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/11 14:00:57 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,32 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*temp;
+	size_t				i;
+	unsigned const char	*go;
+	unsigned char		*end;
 
-	if (!(temp = (char *)malloc(len)))
+	i = 0;
+	if (!dst && !src)
 		return (NULL);
-	ft_memcpy(temp, src, len);
-	ft_memcpy(dst, temp, len);
-	free(temp);
+	go = (unsigned const char *)src;
+	end = (unsigned char *)dst;
+	if (len == 0)
+		return (dst);
+	if (src < dst)
+		while (len > 0)
+		{
+			len--;
+			end[len] = go[len];
+		}
+	else
+		while (i < len)
+		{
+			end[i] = go[i];
+			i++;
+		}
 	return (dst);
 }
 
 /*
-** temp created as a temporary moving space
-** NULL is returned if malloc fails
-** len bytes of src is copied over to temp
-** len bytes of temp is copied over to dst
-** temp is then freed before the new dst is returned
+** len bytes of src is copied over to dst
 */

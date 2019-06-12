@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 12:40:13 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/08 11:41:58 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/11 10:30:32 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*ans;
 
 	i = 0;
-	if (!(ans = (char *)ft_memalloc(sizeof(s))))
+	if (!s || !f)
+		return (NULL);
+	if (!(ans = (char *)ft_memalloc(ft_strlen(s) + 1)))
 		return (NULL);
 	while (s[i])
 	{

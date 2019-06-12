@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 13:03:05 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/08 18:13:22 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/10 13:25:35 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*list;
 
-	list = (t_list *)malloc(sizeof(*list));
+	if (!(list = (t_list *)malloc(sizeof(*list))))
+		return (NULL);
 	if (!content)
 	{
 		list->content = NULL;

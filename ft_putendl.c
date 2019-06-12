@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 08:01:53 by ahartley          #+#    #+#             */
-/*   Updated: 2019/06/08 17:45:19 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/11 12:35:09 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putendl(char const *s)
 {
+	if (!s)
+		return ;
 	ft_putendl_fd(s, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: ahartley <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 09:18:24 by ahartley          #+#    #+#             */
-/*   Updated: 2019/05/27 09:20:21 by ahartley         ###   ########.fr       */
+/*   Updated: 2019/06/11 14:04:53 by ahartley         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
+	if (!fd)
+		return ;
 	write(fd, &c, 1);
 }
